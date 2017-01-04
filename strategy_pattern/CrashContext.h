@@ -30,6 +30,7 @@ private:
 
 };/* class CrashContext  */
 
+/* 这个地方用到简单工厂模式，所以这个例子是策略模式＋简单工厂结合 */
 CrashContext::CrashContext(string strategy) {
     if (strategy == "0.8 discount") {
         mStrategyCharge = new CrashDiscount(0.8);
