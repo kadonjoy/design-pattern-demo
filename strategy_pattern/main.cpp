@@ -10,7 +10,7 @@
  **************************************************************************************
  */
 #include <iostream>
-#include "CrashContext.h"
+#include "CashContext.h"
 
 using namespace std;
 using namespace oodDesignPattern;
@@ -21,20 +21,20 @@ using namespace oodDesignPattern;
  * "300 return 100"
  * */
 int main(int argc, const char *argv[]) {
-    CrashContext * m_crashcontext = NULL;
+    CashContext * m_Cashcontext = NULL;
     if (argc >= 2) {
         cout << "输入的参数是: " << argv[1] << endl;
-        m_crashcontext = new CrashContext(argv[1]);
+        m_Cashcontext = new CashContext(argv[1]);
     } else {
-        m_crashcontext = new CrashContext();
+        m_Cashcontext = new CashContext();
     }
 
-    if (m_crashcontext != NULL) {
-       cout << "优惠之后的总价: " << m_crashcontext->getResult(500) << endl;
+    if (m_Cashcontext != NULL) {
+       cout << "优惠之后的总价: " << m_Cashcontext->getResult(500) << endl;
     }
 
-    if (m_crashcontext != NULL) {
-        delete m_crashcontext;
+    if (m_Cashcontext != NULL) {
+        delete m_Cashcontext;
     }
 
     return 0;

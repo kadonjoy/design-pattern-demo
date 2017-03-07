@@ -20,19 +20,19 @@ public:
     virtual double calculateTotalResult(double total) = 0;
 }; /* class StrategyCharge */
 
-class CrashNormal : public StrategyCharge {
+class CashNormal : public StrategyCharge {
 public:
-    CrashNormal() {};
-    ~CrashNormal() {};
+    CashNormal() {};
+    ~CashNormal() {};
     double calculateTotalResult(double total) {
         return total;
     }
-}; /* class CrashNormal */
+}; /* class CashNormal */
 
-class CrashDiscount : public StrategyCharge {
+class CashDiscount : public StrategyCharge {
 public:
-    CrashDiscount(double rate = 1.0) : mDiscountRate(rate) { };
-    ~CrashDiscount() {};
+    CashDiscount(double rate = 1.0) : mDiscountRate(rate) { };
+    ~CashDiscount() {};
     double calculateTotalResult(double total) {
         double result = total;
         result = total * mDiscountRate;
@@ -40,15 +40,15 @@ public:
     }
 private:
     double mDiscountRate;
-}; /* class CrashDiscount */
+}; /* class CashDiscount */
 
-class CrashReturn : public StrategyCharge {
+class CashReturn : public StrategyCharge {
 public:
-    CrashReturn(double totalValue, double returnValue = 0.0) {
+    CashReturn(double totalValue, double returnValue = 0.0) {
        mTotal = totalValue;
        mReturn = returnValue;
     };
-    ~CrashReturn() {};
+    ~CashReturn() {};
     double calculateTotalResult(double total) {
         double result = total;
         if (total >= mTotal) {
@@ -59,7 +59,7 @@ public:
 private:
     double mTotal;
     double mReturn;
-}; /* class CrashReturn */
+}; /* class CashReturn */
 
 } /* namespace oodDesignPattern */
 

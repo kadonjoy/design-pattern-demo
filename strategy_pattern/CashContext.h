@@ -1,6 +1,6 @@
 /*
  **************************************************************************************
- *       Filename:  CrashContext.h
+ *       Filename:  CashContext.h
  *    Description:   header file
  *
  *        Version:  1.0
@@ -10,8 +10,8 @@
  **************************************************************************************
  */
 
-#ifndef CRASHCONTEXT_H_INCLUDED
-#define CRASHCONTEXT_H_INCLUDED
+#ifndef CashCONTEXT_H_INCLUDED
+#define CashCONTEXT_H_INCLUDED
 
 #include <iostream>
 #include "StrategyCharge.h"
@@ -19,36 +19,36 @@
 using namespace std;
 
 namespace oodDesignPattern {
-class CrashContext {
+class CashContext {
 public:
-    CrashContext(string strategy = "normal");
-    ~CrashContext();
+    CashContext(string strategy = "normal");
+    ~CashContext();
     double getResult(double total);
 
 private:
     StrategyCharge * mStrategyCharge;
 
-};/* class CrashContext  */
+};/* class CashContext  */
 
 /* 这个地方用到简单工厂模式，所以这个例子是策略模式＋简单工厂结合 */
-CrashContext::CrashContext(string strategy) {
+CashContext::CashContext(string strategy) {
     if (strategy == "0.8 discount") {
-        mStrategyCharge = new CrashDiscount(0.8);
+        mStrategyCharge = new CashDiscount(0.8);
     } else if (strategy == "300 return 100") {
-        mStrategyCharge = new CrashReturn(300, 100);
+        mStrategyCharge = new CashReturn(300, 100);
     } else {
-        mStrategyCharge = new CrashNormal();
+        mStrategyCharge = new CashNormal();
     }
 }
 
-CrashContext::~CrashContext() {
+CashContext::~CashContext() {
     if (mStrategyCharge != NULL) {
         delete mStrategyCharge;
         mStrategyCharge = NULL;
     }
 }
 
-double CrashContext::getResult(double total) {
+double CashContext::getResult(double total) {
     double result = 0.0f;
     if (mStrategyCharge != NULL) {
         result = mStrategyCharge->calculateTotalResult(total);
@@ -58,7 +58,7 @@ double CrashContext::getResult(double total) {
 
 } /*  namespace oodDesignPattern   */
 
-#endif /*CRASHCONTEXT_H_INCLUDED*/
+#endif /*CashCONTEXT_H_INCLUDED*/
 
 /********************************** END **********************************************/
 
